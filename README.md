@@ -1,31 +1,34 @@
 # ClarityDesk RAG
 
-An AI support assistant that answers product questions from approved documentation, cites its sources, and knows when to hand a conversation to a human.
+## Product brief
 
-## Why it exists
+A support assistant that answers questions from an approved knowledge base, shows supporting passages, estimates confidence, and routes unsupported questions to a human review queue.
 
-Support teams need fast answers without losing customer trust. ClarityDesk is designed around a simple rule: when the knowledge base does not support an answer, it should say so and offer the right next step.
+## Why this belongs in your portfolio
 
-## Planned capabilities
+It reflects your deployment and support-operations experience while following the RAG/evaluation pattern visible in strong AI-product portfolios.
 
-- Ingest and chunk approved support documents
-- Retrieve relevant passages for each question
-- Generate source-grounded answers with citations
-- Detect low-confidence responses and create an escalation record
-- Capture feedback for future evaluation
+## MVP
 
-## Architecture
+- Ingest a small public or synthetic documentation set.
+- Retrieve source passages and generate cited answers.
+- Display unsupported-answer and low-confidence states.
+- Create an escalation record with the question, sources considered, and reason.
 
-```text
-Question → retrieval → grounded response → confidence check → answer or escalation
-```
+## Success measures
 
-## Roadmap
+- Citation coverage for all substantive answers.
+- A test set covering answerable, ambiguous, and unsupported questions.
+- Clear abstention behavior when evidence is weak.
 
-1. Build a local retrieval pipeline and evaluation dataset.
-2. Add a small FastAPI service and a streaming chat interface.
-3. Add observability, feedback capture, and review queues.
+## Suggested stack
 
-## Status
+Python, FastAPI, Chroma/pgvector, React or Streamlit, an LLM API.
 
-Portfolio project in active design. The first milestone focuses on dependable retrieval and transparent citations.
+## Guardrails
+
+No private support data. Keep the demo domain non-medical and non-financial.
+
+## Chat kickoff
+
+“Build ClarityDesk RAG from this brief. Prioritize source grounding, abstention, and a small evaluation set before adding styling.”
